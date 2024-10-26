@@ -16,20 +16,24 @@ function Card(props) {
 }
 
 function CompactCard({param}){
+  console.log(param)
   const Png=param.png;
   return(
       // compact card
-      <div className="relative flex  h-[7rem] rounded-lg" style={{
+      <div className="relative flex w-full rounded-lg p-5 gap-4" style={{
         background:param.color.backGround,
         boxShadow:param.color.boxShadow
       }}>
-        <div className="flex-1 flex  border">
-          <CircularProgressbar value={param.barValue} text={`${param.barValue}%`}/>
+        <div className="flex-1 flex flex-col  items-center justify-end gap-1  text-white h-[8rem]  ">
+          <CircularProgressbar value={param.barValue} text={`${param.barValue}%`} className=" stroke-white drop-shadow-xl  w-fit"/>
+          <span className="self-start text-lg font-semibold ml-3">{param.title}</span>
+          
         </div>
-        <div>
-          <Png/>
-          <span>{param.value}</span>
-          <span>Last 24 hours</span>
+        
+        <div className="flex flex-1 flex-col  text-white items-end gap-6 justify-end ">
+          <Png className="w-12"/>
+          <span className="text-2xl font-semibold">$123</span>
+          <span className="text-sm font-semibold">Last 24 hours</span>
         </div>
       </div>
     

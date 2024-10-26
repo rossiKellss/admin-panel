@@ -4,7 +4,7 @@ import Card from "./Card"
 function Cards() {
     const [expanded,setExpanded]=useState();
   return (
-    <div className="flex ">
+    <div className="flex gap-4  ">
      {cardsData.map((data,index)=>{
         return(
         <Card 
