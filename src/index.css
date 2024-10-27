@@ -11,9 +11,12 @@
     min-height: 100vh;
   }
 
-  .CircularProgressBar-path{
+  .CircularProgressbar-path{
     stroke: white !important;
     
 
+  }
+  .CircularProgressbar-trail{
+    display: none;
   }
 }
