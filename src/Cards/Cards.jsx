@@ -12,6 +12,7 @@ function Cards() {
         color={data.color}
         barValue={data.barValue}
         png={data.png}
+        key={index}
 
         />)
         
