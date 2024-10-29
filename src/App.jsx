@@ -1,5 +1,6 @@
 import Sidebar from "./components/Sidebar"
 import Dashboard from "./Main/Dashboard"
+import RightSide from "./RightSide/RightSide"
 
 function App() {
   
@@ -9,6 +10,7 @@ function App() {
       <div className="grid grid-cols-custom-layout w-[97%] min-h-[96vh] bg-glass rounded-lg overflow-hidden">
         <Sidebar/>
         <Dashboard/>
+        <RightSide/>
       </div>
 
     </div>

@@ -9,6 +9,8 @@ import {
     
 } from "@iconscout/react-unicons"
 
+import user from '../assets/user.png'
+
 export const lists=[
     {
         icon:UilEstate,
@@ -71,4 +73,36 @@ export const cardsData=[
             
         ]
     }
+]
+
+export const updatesData=[
+    {
+        icon:user,
+        name:"Rossi",
+        message:"Fuckkerrr just odered something",
+        time:"2h"
+    },
+    {
+        icon:user,
+        message:"roshan just odered sex toy and some lubes",
+        time:"3h"
+
+
+    },
+    {
+        icon:user,
+        message:"roshan just odered sex toy and some lubes",
+        time:"3h"
+
+
+    },
+    {
+        icon:user,
+        message:"roshan just odered sex toy and some lubes",
+        time:"3h"
+
+
+    },
+    
+
 ]

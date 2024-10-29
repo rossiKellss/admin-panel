@@ -24,15 +24,16 @@ function createData(name, calories, fat, carbs, protein) {
 
 export default function ProductTable() {
     return (
-    <TableContainer>
+    <TableContainer style={{
+        boxShadow:'0px 13px 20px 0px #80808029'
+    }}>
          <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell>Tracking Id</TableCell>
+            <TableCell align="right">Date</TableCell>
+            <TableCell align="right">Status</TableCell>
+            <TableCell align="right">Details</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
