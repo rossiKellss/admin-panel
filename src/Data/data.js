@@ -96,13 +96,7 @@ export const updatesData=[
 
 
     },
-    {
-        icon:user,
-        message:"roshan just odered sex toy and some lubes",
-        time:"3h"
-
-
-    },
+    
     
 
 ]
