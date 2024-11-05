@@ -2,6 +2,7 @@ import logo from "../assets/logo.png";
 import { UilSignOutAlt } from "@iconscout/react-unicons";
 import { lists } from "../Data/data";
 import { useState } from "react";
+import {Link} from 'react-router-dom'
 const Sidebar = () => {
   const [selected, setSelected] = useState(0);
 
@@ -19,6 +20,7 @@ const Sidebar = () => {
       <div className="relative mt-12 gap-10 flex flex-col   w-full">
         {lists.map((item, index) => {
           return (
+            <Link to={item.link}>
             <div
               className={`relative flex items-center gap-4 rounded-r-md  cursor-pointer  py-2 px-4 w-full ${
                 index == selected ? "bg-red-200" : ""
@@ -39,6 +41,7 @@ const Sidebar = () => {
               </div>
               <span className=" ">{item.name}</span>
             </div>
+            </Link>
           );
         })}
         <div className="flex items-center relative cursor-pointer bottom-0 ml-4 transition-all duration-300">

@@ -10,27 +10,33 @@ import {
 } from "@iconscout/react-unicons"
 
 import user from '../assets/user.png'
+import { link } from "framer-motion/client"
 
 export const lists=[
     {
         icon:UilEstate,
-        name:"Dashboard"
+        name:"Dashboard",
+        link:"/"
     },
     {
         icon:UilClipboardAlt,
-        name:"Orders"
+        name:"Orders",
+        link:"/orders"
     },
     {
         icon:UilUsersAlt,
-        name:"Customers"
+        name:"Customers",
+        link:"/customers"
     },
     {
         icon:UilPackage,
-        name:"Products"
+        name:"Products",
+        link:"/products/list-all"
     },
     {
         icon:UilChart,
-        name:"Analytics"
+        name:"Analytics",
+        link:"/analytics"
     },
     
     
