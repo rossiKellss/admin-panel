@@ -20,7 +20,7 @@ const Sidebar = () => {
       <div className="relative mt-12 gap-10 flex flex-col   w-full">
         {lists.map((item, index) => {
           return (
-            <Link to={item.link}>
+            <Link to={item.link} key={index}>
             <div
               className={`relative flex items-center gap-4 rounded-r-md  cursor-pointer  py-2 px-4 w-full ${
                 index == selected ? "bg-red-200" : ""

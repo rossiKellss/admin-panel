@@ -5,10 +5,33 @@ import {Routes,Route} from 'react-router-dom'
 import ShowProducts from '../Products/ShowProducts'
 import Create from '../Products/Create'
 import Update from '../Products/Update'
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { useLazyCheckAuthQuery } from "../api/authApiSlice";
 
 function Home() {
+  const navigate=useNavigate();
+  const [checkAuth]=useLazyCheckAuthQuery();
+
+  useEffect(()=>{
+    const isLoggedIn = async () => {
+      try {
+        const res = await checkAuth().unwrap();
+        
+        
+        
+        
+      } catch (err) {
+       
+        if(!err?.data?.success){
+          navigate('/login')
+        }
+      }
+    };
+    isLoggedIn();
+  },[]);
   return (
-    <div className="w-full min-h-screen bg-gradient-to-r from-[#ffe1bc] via-[#ffcfd1] to-[#f3c6f1] flex justify-center items-center">
+    <div className="flex justify-center items-center pt-4 ">
       <div className="grid grid-cols-custom-layout w-[97%] min-h-[96vh] bg-glass rounded-lg overflow-hidden">
         <Sidebar/>
         <Routes>
