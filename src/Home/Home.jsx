@@ -34,6 +34,7 @@ function Home() {
     <div className="flex justify-center items-center pt-4 ">
       <div className="grid grid-cols-custom-layout w-[97%] min-h-[96vh] bg-glass rounded-lg overflow-hidden">
         <Sidebar/>
+        {/* <Dashboard/> */}
         <Routes>
           <Route path="/" element={<Dashboard/>}/>
           <Route path='/products/list-all' element={<ShowProducts/>}/>
