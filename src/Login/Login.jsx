@@ -40,7 +40,7 @@ function Login() {
     } catch (err) {
       console.log("the error is",err);
       const message=err.data.message;
-      Alert(message,"error")
+      Alert({message,icon:"error",color:"red"})
       
     }
 
