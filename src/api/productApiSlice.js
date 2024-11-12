@@ -9,7 +9,7 @@ export const productApiSlice = baseApi.injectEndpoints({
     
     getProductsById: builder.query({
       query: (id) => ({
-        url: `products/${id}`,
+        url: `/admin/products/${id}`,
       }),
       providesTags: ["Post"],
     }),
@@ -25,7 +25,7 @@ export const productApiSlice = baseApi.injectEndpoints({
     
     deleteProducts: builder.mutation({
       query: (id) => ({
-        url: `products/${id}`,
+        url: `/admin/products/${id}`,
         method: "DELETE",
       }),
       invalidatesTags: ["Post"],
@@ -33,7 +33,7 @@ export const productApiSlice = baseApi.injectEndpoints({
 
     updateProducts: builder.mutation({
       query: ({ id, formData }) => ({
-        url: `products/${id}`,
+        url: `/admin/products/${id}`,
         method: "PUT",
         body: formData,
       }),
@@ -42,7 +42,7 @@ export const productApiSlice = baseApi.injectEndpoints({
 
     searchProducts: builder.query({
       query: (data) => ({
-        url: `products/search/${data}`,
+        url: `/admin/products/search/${data}`,
       }),
       invalidatesTags: ["Post"],
     }),

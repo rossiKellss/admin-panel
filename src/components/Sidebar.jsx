@@ -45,7 +45,12 @@ const Sidebar = () => {
           );
         })}
         <div className="flex items-center relative cursor-pointer bottom-0 ml-4 transition-all duration-300">
-          <UilSignOutAlt className="absolute -bottom-4" />
+         <div className="flex gap-4">
+
+          <UilSignOutAlt className=" " />
+          <span className="">Logout</span>
+         </div>
+          
         </div>
       </div>
     </div>
