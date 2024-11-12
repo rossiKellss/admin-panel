@@ -33,7 +33,7 @@ function createData(name, calories, fat, carbs, protein) {
   
 
 
-export default function ProductTable({props,onDelete}) {
+export default function ProductTable({props,onDelete,onUpdate}) {
   
   
   
@@ -97,7 +97,7 @@ export default function ProductTable({props,onDelete}) {
                 <TableCell align="right">{data.Quantity}</TableCell>
                 <TableCell align="right">
                   <div className='flex gap-2  justify-end'>
-                    <button className='px-2 py-2 bg-blue-400 text-white text-xs'>Update</button>
+                    <button className='px-2 py-2 bg-blue-400 text-white text-xs' onClick={()=>{onUpdate(data)}}>Update</button>
                     <button className='px-2 py-1 bg-red-400 text-white text-xs' onClick={()=>{onDelete(data._id)}}>Delete</button>
 
                   </div>

@@ -1,15 +1,22 @@
 import { useEffect, useState } from "react";
 import ProductTable from "../Table/Table";
 import { MdAddCircle } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   useGetProductsQuery,
   useDeleteProductsMutation,
   useLazySearchProductsQuery,
   useLazyFilterProductsQuery,
 } from "../api/productApiSlice";
+import { useDispatch } from "react-redux";
+import { updateProductCred } from "../features/product/productSlice";
+
+
 
 function ShowProducts() {
+  const navigate=useNavigate();
+  const dispatch=useDispatch();
+  
   const { data: initialData } = useGetProductsQuery();
   const [deleteProducts] = useDeleteProductsMutation();
   const [triggerSearch] = useLazySearchProductsQuery();
@@ -22,6 +29,12 @@ function ShowProducts() {
       setFetchedData(initialData);
     }
   }, [initialData]);
+
+  const updateProducts=(data)=>{
+    dispatch(updateProductCred(data));
+    navigate(`/products/update-products/${data._id}`)
+
+  }
 
   const capitalizeLetter = (value) => {
     const capitilizedVal = value.charAt(0).toUpperCase() + value.slice(1);
@@ -55,13 +68,11 @@ function ShowProducts() {
     try {
       const { data } = await deleteProducts(id);
       console.log(data.message);
+      
     } catch (err) {
       console.log(err);
     }
   };
-
- 
-
   return (
     <div className="relative py-8 px-8 flex flex-col gap-4">
       <h1 className="text-3xl font-semibold">Products</h1>
@@ -86,7 +97,7 @@ function ShowProducts() {
         </div>
         <button className="px-2 py-1 bg-red-400 text-white" onClick={onReset}>Reset</button>
       </div>
-      <div className="mt-2">{fetchedData && <ProductTable props={fetchedData.products} onDelete={deleteItem} />}</div>
+      <div className="mt-2">{fetchedData && <ProductTable props={fetchedData.products} onDelete={deleteItem} onUpdate={updateProducts} />}</div>
       <div className="relative  drop-shadow-md">
         <Link to="/products/add-products">
           <MdAddCircle className="absolute text-6xl -bottom-5 right-0 text-pink cursor-pointer" />

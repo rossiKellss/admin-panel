@@ -39,7 +39,7 @@ function Home() {
           <Route path="/" element={<Dashboard/>}/>
           <Route path='/products/list-all' element={<ShowProducts/>}/>
           <Route path='/products/add-products' element={<Create/>}/>
-          <Route path='/products/update-products' element={<Update/>}/>
+          <Route path='/products/update-products/:id' element={<Update/>}/>
           
           
             

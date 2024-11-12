@@ -32,10 +32,10 @@ export const productApiSlice = baseApi.injectEndpoints({
     }),
 
     updateProducts: builder.mutation({
-      query: ({ id, formData }) => ({
+      query: ({ id, formCred }) => ({
         url: `/admin/products/${id}`,
         method: "PUT",
-        body: formData,
+        body: formCred,
       }),
       invalidatesTags: ["Post"],
     }),
